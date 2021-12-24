@@ -21,7 +21,7 @@ namespace SpotifyAPI.Web
     /// A list of PlaylistTracks, which items can be a FullTrack or FullEpisode
     /// </summary>
     /// <value></value>
-    public Paging<PlaylistTrack<IPlayableItem>> Tracks { get; set; } = default!;
+    public Paging<PlaylistTrack<BasePlayableItem>> Tracks { get; set; } = default!;
     public string Type { get; set; } = default!;
     public string Uri { get; set; } = default!;
   }

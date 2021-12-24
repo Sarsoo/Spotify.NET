@@ -4,7 +4,7 @@ using Newtonsoft.Json.Converters;
 
 namespace SpotifyAPI.Web
 {
-  public class FullEpisode : IPlayableItem
+  public class FullEpisode : BasePlayableItem
   {
     public string AudioPreviewUrl { get; set; } = default!;
     public string Description { get; set; } = default!;

@@ -187,7 +187,7 @@ namespace SpotifyAPI.Web
       return new SpotifyClientConfig(
         SpotifyUrls.APIV1,
         null,
-        new NewtonsoftJSONSerializer(),
+        new TextJsonSerializer(),
         new NetHttpClient(),
         null,
         null,

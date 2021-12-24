@@ -13,9 +13,17 @@ namespace SpotifyAPI.Web
     /// </summary>
     /// <value></value>
     [JsonConverter(typeof(PlayableItemConverter))]
-    public IPlayableItem Item { get; set; } = default!;
+    public BasePlayableItem Item { get; set; } = default!;
     public int? ProgressMs { get; set; }
     public long Timestamp { get; set; }
+  }
+
+  public class CurrentlyPlaying<T>: CurrentlyPlaying where T : BasePlayableItem
+  {
+    public new T Item { 
+      get => (T) base.Item; 
+      set => base.Item = value; 
+    }
   }
 }
 

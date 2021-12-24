@@ -38,7 +38,7 @@ namespace SpotifyAPI.Web
     /// https://developer.spotify.com/documentation/web-api/reference-beta/#endpoint-get-playlists-tracks
     /// </remarks>
     /// <returns></returns>
-    Task<Paging<PlaylistTrack<IPlayableItem>>> GetItems(string playlistId);
+    Task<Paging<PlaylistTrack<BasePlayableItem>>> GetItems(string playlistId);
 
     /// <summary>
     /// Get full details of the items of a playlist owned by a Spotify user.
@@ -49,7 +49,7 @@ namespace SpotifyAPI.Web
     /// https://developer.spotify.com/documentation/web-api/reference-beta/#endpoint-get-playlists-tracks
     /// </remarks>
     /// <returns></returns>
-    Task<Paging<PlaylistTrack<IPlayableItem>>> GetItems(string playlistId, PlaylistGetItemsRequest request);
+    Task<Paging<PlaylistTrack<BasePlayableItem>>> GetItems(string playlistId, PlaylistGetItemsRequest request);
 
     /// <summary>
     /// Create a playlist for a Spotify user. (The playlist will be empty until you add tracks.)

@@ -26,19 +26,19 @@ namespace SpotifyAPI.Web
       return API.Post<SnapshotResponse>(URLs.PlaylistTracks(playlistId), null, request.BuildBodyParams());
     }
 
-    public Task<Paging<PlaylistTrack<IPlayableItem>>> GetItems(string playlistId)
+    public Task<Paging<PlaylistTrack<BasePlayableItem>>> GetItems(string playlistId)
     {
       var request = new PlaylistGetItemsRequest();
 
       return GetItems(playlistId, request);
     }
 
-    public Task<Paging<PlaylistTrack<IPlayableItem>>> GetItems(string playlistId, PlaylistGetItemsRequest request)
+    public Task<Paging<PlaylistTrack<BasePlayableItem>>> GetItems(string playlistId, PlaylistGetItemsRequest request)
     {
       Ensure.ArgumentNotNullOrEmptyString(playlistId, nameof(playlistId));
       Ensure.ArgumentNotNull(request, nameof(request));
 
-      return API.Get<Paging<PlaylistTrack<IPlayableItem>>>(URLs.PlaylistTracks(playlistId), request.BuildQueryParams());
+      return API.Get<Paging<PlaylistTrack<BasePlayableItem>>>(URLs.PlaylistTracks(playlistId), request.BuildQueryParams());
     }
 
     public Task<FullPlaylist> Create(string userId, PlaylistCreateRequest request)

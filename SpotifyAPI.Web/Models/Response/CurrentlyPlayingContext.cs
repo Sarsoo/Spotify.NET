@@ -17,10 +17,19 @@ namespace SpotifyAPI.Web
     /// </summary>
     /// <value></value>
     [JsonConverter(typeof(PlayableItemConverter))]
-    public IPlayableItem Item { get; set; } = default!;
+    public BasePlayableItem Item { get; set; } = default!;
 
     public string CurrentlyPlayingType { get; set; } = default!;
     public Actions Actions { get; set; } = default!;
+  }
+
+  public class CurrentlyPlayingContext<T> : CurrentlyPlayingContext where T : BasePlayableItem
+  {
+    public new T Item
+    {
+      get => (T)base.Item;
+      set => base.Item = value;
+    }
   }
 }
 
