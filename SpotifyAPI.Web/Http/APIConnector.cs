@@ -18,7 +18,7 @@ namespace SpotifyAPI.Web.Http
     public event EventHandler<IResponse>? ResponseReceived;
 
     public APIConnector(Uri baseAddress, IAuthenticator authenticator) :
-      this(baseAddress, authenticator, new TextJsonSerializer(), new NetHttpClient(), null, null)
+      this(baseAddress, authenticator, new NewtonsoftJSONSerializer(), new NetHttpClient(), null, null)
     { }
     public APIConnector(
       Uri baseAddress,

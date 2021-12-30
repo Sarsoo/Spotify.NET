@@ -15,7 +15,7 @@ namespace SpotifyAPI.Web
 
       Assert.IsInstanceOf(typeof(SimplePaginator), defaultConfig.DefaultPaginator);
       Assert.IsInstanceOf(typeof(NetHttpClient), defaultConfig.HTTPClient);
-      Assert.IsInstanceOf(typeof(TextJsonSerializer), defaultConfig.JSONSerializer);
+      Assert.IsInstanceOf(typeof(NewtonsoftJSONSerializer), defaultConfig.JSONSerializer);
       Assert.AreEqual(SpotifyUrls.APIV1, defaultConfig.BaseAddress);
       Assert.AreEqual(null, defaultConfig.Authenticator);
       Assert.AreEqual(null, defaultConfig.HTTPLogger);
@@ -32,7 +32,7 @@ namespace SpotifyAPI.Web
 
       Assert.IsInstanceOf(typeof(SimplePaginator), defaultConfig.DefaultPaginator);
       Assert.IsInstanceOf(typeof(NetHttpClient), defaultConfig.HTTPClient);
-      Assert.IsInstanceOf(typeof(TextJsonSerializer), defaultConfig.JSONSerializer);
+      Assert.IsInstanceOf(typeof(NewtonsoftJSONSerializer), defaultConfig.JSONSerializer);
       Assert.AreEqual(SpotifyUrls.APIV1, defaultConfig.BaseAddress);
       Assert.AreEqual(null, defaultConfig.HTTPLogger);
       Assert.AreEqual(null, defaultConfig.RetryHandler);
